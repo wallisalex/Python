@@ -1,0 +1,7 @@
+#Author Alex Wallis
+
+username = input ("Enter username ")
+print("Welcome " + username)
+
+x = input("Please enter an x cordinate ")
+
