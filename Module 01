@@ -1,7 +1,23 @@
 #Author Alex Wallis
 
-username = input ("Enter username ")
-print("Welcome " + username)
+username = input ("Enter username ") #asking the user for their name
+x1 = input("Please enter the x-cordinate for the first vector: ") #asking user for vector cords
+y1 = input("Please enter the y-cordinate for the first vector: ")
+x2 = input("Please enter the x-cordinate for the seccond vector: ")
+y2 = input("Please enter the y-cordinate for the seccond vector: ")
 
-x = input("Please enter an x cordinate ")
+#calculating magnitude,sum and difference
+mag1 = (x1 + x1) + (y1 + y1)
+sum1 = x1 + y1 
+dif1 = x1 - y1
+
+print ("The magnitude of the first vector is " + mag1)
+print ("The sum of the first vector is " + sum1)
+print ("The difference of the first vector is " + dif1)
+
+
+
+
+print("The user's name is " + username)
+
 
