@@ -6,18 +6,35 @@ y1 = input("Please enter the y-cordinate for the first vector: ")
 x2 = input("Please enter the x-cordinate for the seccond vector: ")
 y2 = input("Please enter the y-cordinate for the seccond vector: ")
 
+#compliated way to turn string into float
+x1 = float(x1)
+y1 = float(y1)
+x2 = float(x2)
+y2 = float(y2)
+
 #calculating magnitude,sum and difference
-mag1 = (x1 + x1) + (y1 + y1)
-sum1 = x1 + y1 
-dif1 = x1 - y1
+mag1 = (x1 * 2) + (y1 * 2)
+mag2 = (x2 * 2) + (y2 * 2)
+sumx = (x1 +x2)
+sumy = (y1 + y2)
+dif = x1 - y1
 
-print ("The magnitude of the first vector is " + mag1)
-print ("The sum of the first vector is " + sum1)
-print ("The difference of the first vector is " + dif1)
-
-
-
+#another form of complication
+mag1 = str(mag1)
+mag2 = str(mag2)
+sum = str(sum)
+dif = str(dif)
 
 print("The user's name is " + username)
+print ("The magnitude of the first vector is " + mag1)
+print ("The magnitude of the seccond vector is " + mag2)
+print
+print ("The sum of the two vectors is " + sum)
+print ("The difference of the two vectors is " + dif)
+
+
+
+
+
 
 
