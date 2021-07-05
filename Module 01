@@ -13,10 +13,13 @@ x2 = float(x2)
 y2 = float(y2)
 
 #calculating magnitude,sum and difference
-mag1 = (x1 * 2) + (y1 * 2)
-mag2 = (x2 * 2) + (y2 * 2)
+
 sumx = (x1 +x2)
 sumy = (y1 + y2)
+mag1 = (x1**2) + (y1**2)
+mag1 = (mag1 ** 1/2)
+mag2 = (x2 * 2) + (y2 * 2)
+
 dif = x1 - y1
 
 #another form of complication
