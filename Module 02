@@ -1,16 +1,18 @@
 #Author Alexander Wallis
+#Written for Python 3.9.6
+#
 
 def main(): 
-
+    #Cow Data
     cowLength = int(input("Please enter a value for the Cow Length: "))
     cowHeight = int(input("Please enter a value for the Cow height: "))
-
+    #Rhino Data 
     rhinoLength = int(input("Please enter a value for the Rhino Length: "))
     rhinoHeight = int(input("Please enter a value for the Rhino Height: "))
-    
-    #turtleLength = input("Please enter a value for the Turtle Length: ")
-    #turtleHeight = input("Please enter a value for the Turtle Height: ")
-   
+    #Turtle Data
+    turtleLength = input("Please enter a value for the Turtle Length: ")
+    turtleHeight = input("Please enter a value for the Turtle Height: ")
+    #Bird Data
     #birdRadius = input("Please enter a value for bird radius: ")
     
     cPen(cowHeight,cowLength)
@@ -25,11 +27,15 @@ def cPen(cL, cH): #cow function with cow variables and calculations
 
 def rGround(rL,rH):#rhino function with rhino variables and calculations 
     rArea = (rL * rH)
-    rPet = (rL + rL + rH + rH)
+    rPer = (rL + rL + rH + rH)
     print("The area of the Rhino Common Ground is       :" + str(rArea))
-    print("The perimeter of the Rhino Common Ground is  :" + str(rPet))
+    print("The perimeter of the Rhino Common Ground is  :" + str(rPer))
 
-
+def tPetting(tL,tH):#turtle function with turtle variables and calculations 
+    tArea = (tL * tH)
+    tPer = (tL + tL + tH + tH)
+    print("The area of the Turtle Petting Area is       :" + str(tArea))
+    print("The perimeter of the Turtle Petting Area is  :" + str(tPer))
 
 
 

@@ -1,4 +1,5 @@
-#Author Alex Wallis
+#Author Alexander Wallis
+#Written for Python 3.9.6
 
 username = input ("Enter username ") #asking the user for their name
 x1 = float(input("Please enter the x-cordinate for the first vector: ")) #asking user for vector cords
