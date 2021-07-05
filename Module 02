@@ -1,1 +1,40 @@
 #Author Alexander Wallis
+
+def main(): 
+
+    cowLength = int(input("Please enter a value for the Cow Length: "))
+    cowHeight = int(input("Please enter a value for the Cow height: "))
+
+    rhinoLength = int(input("Please enter a value for the Rhino Length: "))
+    rhinoHeight = int(input("Please enter a value for the Rhino Height: "))
+    
+    #turtleLength = input("Please enter a value for the Turtle Length: ")
+    #turtleHeight = input("Please enter a value for the Turtle Height: ")
+   
+    #birdRadius = input("Please enter a value for bird radius: ")
+    
+    cPen(cowHeight,cowLength)
+    rGround(rhinoLength,rhinoHeight)
+
+    
+def cPen(cL, cH): #cow function with cow variables and calculations
+    cArea =  (cL * cH)
+    cPer = (cL + cL + cH + cH)
+    print ("The area of the Moo Cow Pen is              : " + str(cArea))
+    print ("The perimeter of the Moo Cow Pen is         : " + str(cPer))
+
+def rGround(rL,rH):#rhino function with rhino variables and calculations 
+    rArea = (rL * rH)
+    rPet = (rL + rL + rH + rH)
+    print("The area of the Rhino Common Ground is       :" + str(rArea))
+    print("The perimeter of the Rhino Common Ground is  :" + str(rPet))
+
+
+
+
+
+
+
+
+
+main()

@@ -1,16 +1,10 @@
 #Author Alex Wallis
 
 username = input ("Enter username ") #asking the user for their name
-x1 = input("Please enter the x-cordinate for the first vector: ") #asking user for vector cords
-y1 = input("Please enter the y-cordinate for the first vector: ")
-x2 = input("Please enter the x-cordinate for the seccond vector: ")
-y2 = input("Please enter the y-cordinate for the seccond vector: ")
-
-#compliated way to turn string into float
-x1 = float(x1)
-y1 = float(y1)
-x2 = float(x2)
-y2 = float(y2)
+x1 = float(input("Please enter the x-cordinate for the first vector: ")) #asking user for vector cords
+y1 = float(input("Please enter the y-cordinate for the first vector: "))
+x2 = float(input("Please enter the x-cordinate for the seccond vector: "))
+y2 = float(input("Please enter the y-cordinate for the seccond vector: "))
 
 #calculating magnitude,sum and difference
 
@@ -22,18 +16,12 @@ mag2 = (x2 * 2) + (y2 * 2)
 
 dif = x1 - y1
 
-#another form of complication
-mag1 = str(mag1)
-mag2 = str(mag2)
-sum = str(sum)
-dif = str(dif)
-
 print("The user's name is " + username)
-print ("The magnitude of the first vector is " + mag1)
-print ("The magnitude of the seccond vector is " + mag2)
+print ("The magnitude of the first vector is " + str(mag1))
+print ("The magnitude of the seccond vector is " + str(mag2))
 print
-print ("The sum of the two vectors is " + sum)
-print ("The difference of the two vectors is " + dif)
+print ("The sum of the two vectors is " + str(sum))
+print ("The difference of the two vectors is " + str(dif))
 
 
 
