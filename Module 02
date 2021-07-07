@@ -23,6 +23,7 @@ def main():
 
     print("---------------------------------------------------------------------------")
     #did a big equation instead, coudlnt get variables from functions to work
+    #maybe use global variables with scope?
 
     totalA = round(((cowLength*cowHeight) + (rhinoLength * rhinoHeight) + (turtleLength * turtleHeight) + (3.1415 * (birdRadius**2))),5)
     totalP = round(((cowLength*2) + cowHeight + (rhinoLength*2) + (rhinoHeight * 2) + (turtleLength*2) + turtleHeight + (2 * 3.1415 * birdRadius)),5)
