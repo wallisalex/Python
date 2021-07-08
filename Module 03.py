@@ -9,20 +9,21 @@
 # Greater Than or Equal To - >=
 # Equal To - ==
 # Not Equal To - !=
-global x,y
+
+global x,y #global variables to store data
 x = 5
 y = 0
 
 def main():
        
-    sNum = int(input("Please enter a secret number: "))
+    sNum = int(input("Please enter a secret number: ")) #takes in input for the secret number 
 
-    def ClearScreen():
+    def ClearScreen(): #clear screen function found in assignment directions
         clear = ('\n' * 40)
         print(clear)
 
 
-    def GuessNum():
+    def GuessNum(): #function takes in input from user, uses global variable to count down from 5 guesses, determines is the guess is great than, less than, or equal to the secret number
         guess = int(input("Try to guess the secret number: "))
         y = guess
         global x
@@ -41,7 +42,7 @@ def main():
             x = -1
                            
     ClearScreen()
-    
+    #not using loops, but if statements to reach the goal of 5 
     if x > 0: 
         GuessNum()
     if x > 0: 
@@ -53,7 +54,7 @@ def main():
     if x > 0: 
         GuessNum()
             
-    if x == 0:
+    if x == 0: #is user runs out of tries this runs 
         print("Sorry... you wre not able to guess the secret number")
         print("YOU LOSE... GAME OVER" + '\n')
         print("BTW... the secret number was " + (str(sNum)) +"... Better luck next time")

@@ -38,8 +38,8 @@ def main():
 def cPen(cL, cH): #cow function with cow variables and calculations
     cArea =  (cL * cH)
     cPer = (cL + cL + cH + cH)
-    print ("The area of the Moo Cow Pen is               : " + str(cArea))
-    print ("The perimeter of the Moo Cow Pen is          : " + str(cPer))
+    print ("The area of the Moo Cow Pen is              :" + str(cArea))
+    print ("The perimeter of the Moo Cow Pen is         :" + str(cPer))
     
 
 
