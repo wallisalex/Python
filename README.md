@@ -1,2 +1,2 @@
 # Python
-This is for Python
+Welcome to my Python GitHub
