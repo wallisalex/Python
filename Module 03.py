@@ -23,7 +23,7 @@ def main():
         print(clear)
 
 
-    def GuessNum(): #function takes in input from user, uses global variable to count down from 5 guesses, determines is the guess is great than, less than, or equal to the secret number
+    def GuessNum(): #function takes in input from user, uses global variable to count down from 5 guesses, determines if the guess is great than, less than, or equal to the secret number
         guess = int(input("Try to guess the secret number: "))
         y = guess
         global x
