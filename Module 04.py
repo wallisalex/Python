@@ -4,26 +4,56 @@
 
 def Main():
 
-    rectLength = int(input("Please enter a value for the Rectangle's Length: "))
+    rectLength = int(input("Please enter a value for the Rectangle's Length: ")) #user input for rectangle
     rectWidth = int(input("Please enter a value for the Rectangle's Width: "))
     
+    triHeight = int(input("Please enter a value for the Triangles height: ")) #user input for right triangle
+
+    pyraBase = int(input("Please enter a value for the pyramids base: ")) #pyramid base
     
     def DrawRect(rH, rW): #rectangle function which takes in varibles for legnth and width 
-            x = rH
-            y = rW
+        x = rH #converting user input to temp varibles 
+        y = rW
+                
+        print("Displaying a " + str(x) + "by " + str(y) + " rectangle.") #outputing the size and type of shape
 
-            for _ in range(x):
-                for num in range(1, y + 1):
-                    print(num * "*")
-                print("")
+        print("") 
 
-            print(x)
-    
-    
-    
-    
-    DrawRect(rectLength,rectWidth)
+        for i in range(x):  #
+            print("* " * y) #prints list based on user input 
+        
+        print("")
+        print("")
+        print("")
+                
+    def DrawRtri(tH):
 
+        x = tH #converting user input to temp variable 
+
+        print("Displaying a triangle with a height = " + str(x) ) #outputing the size and type of shape as well as converting temp variable to string
+        
+        print("")
+    
+        i = 1 #creating temp variable for while loop, feels like java
+        while i <= x : #forming while loop 
+            print ("* " * i) #prints a line based on user input
+            i += 1 #counts up to make sure loop ends
+            
+        print("")
+        print("")
+        print("")
+
+    def DrawPyra(pB):
+        x = pB
+        
+        
+    
+    
+    
+    
+    #DrawRect(rectLength,rectWidth)
+    #DrawRtri(triHeight)
+    DrawPyra(pyraBase)
 
     
       
