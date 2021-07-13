@@ -61,15 +61,6 @@ def Main():
 
             print ()
             
-
-        
-
-
-
-    
-    
-    
-    
     DrawRect(rectLength,rectWidth)
     DrawRtri(triHeight)
     DrawPyra(pyraBase)
