@@ -4,10 +4,10 @@
 
 def Main():
 
-    rectLength = int(input("Please enter a value for the Rectangle's Length: ")) #user input for rectangle
-    rectWidth = int(input("Please enter a value for the Rectangle's Width: "))
+    #rectLength = int(input("Please enter a value for the Rectangle's Length: ")) #user input for rectangle
+    #rectWidth = int(input("Please enter a value for the Rectangle's Width: "))
     
-    triHeight = int(input("Please enter a value for the Triangles height: ")) #user input for right triangle
+   # triHeight = int(input("Please enter a value for the Triangles height: ")) #user input for right triangle
 
     pyraBase = int(input("Please enter a value for the pyramids base: ")) #pyramid base
     
@@ -45,8 +45,22 @@ def Main():
 
     def DrawPyra(pB):
         x = pB
+
+        for i in range(x): #nested for loop to create pyramid, x represents row
+
+            for j in range(x - i - 1): #creates number of columns
+                print("  ", end ="") #prints spaces 
+
+            for j in range(2 * i + 1): #doubles user input 
+                print ("* ", end = "")
+
+            print ()
+            
+
         
-        
+
+
+
     
     
     
