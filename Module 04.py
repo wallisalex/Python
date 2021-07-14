@@ -55,7 +55,7 @@ def Main():
                 print("  ", end ="") #prints spaces 
 
             for j in range(2 * i + 1): #doubles user input 
-                print ("* ", end = "") #prints *
+                print ("* ", end = "") #prints *, end works like \n creating a new print statement every loop
 
             
 
