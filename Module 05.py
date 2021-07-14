@@ -36,32 +36,32 @@ def main():
             difRange,guesses = DifandGuess(difficulty) #runs multiple return function with user input to return coresponding values
             rand=random.randint(0,difRange) #generates random number based on user input between 1 and X 
 
-            print("The secret number has been generated... the game has begun.\n")
+            print("The secret number has been generated... the game has begun.\n") #lets the user know the game is ready 
                        
             #GUESS LOOP TIME
 
             for i in range(0,guesses): #loops until guesses run out or number is guessed
                 guess = getGuess() #calling the return variable from funciton above 
                
-                if guess == rand:
+                if guess == rand: #if the guess is the same as the random number the user wins
                     print()
                     print("You have successfully guessed the secret number. Horray for you.")
                     print("YOU WIN!!!")
                     i = 0 #breaks loop/could have used break?
 
                 if guess != rand: #could have used else?
-                    if guess > rand:
+                    if guess > rand: #checks if the users guess is greather than the number
                         guesses = guesses -1
                         print("The secret number is lower than " + str(guess))
                         print()
                         
-                    if guess < rand:
+                    if guess < rand: #checks if the users guess is greather than the number
                         guesses = guesses -1
                         print("The secret number is greater than " + str(guess))
                         print()
 
                     if guesses != 0:
-                        print("You have " + str(guesses) + " left...")      #printed "you have zero guesses left" hard coded it out
+                        print("You have " + str(guesses) + " left...")      #printed "you have zero guesses left" so i hard coded it out
                         
                 
                 if guesses == 0: #once the gueses counter tallies down, print that
