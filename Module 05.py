@@ -13,8 +13,8 @@ def main():
 
     def DifandGuess(difficulty:int): #function with multiple returns
         
-        difRange=[25,100,1000] #ranges coresponding to difficulty
-        guesses=[5,8,12] #guesses coresponding to difficulty HAD TO USE [] BECAUES () would not work
+        difRange=[25,100,1000] #ranges coresponding to difficulty https://www.geeksforgeeks.org/g-fact-41-multiple-return-values-in-python/
+        guesses=[5,8,12] #guesses coresponding to difficulty HAD TO USE [] BECAUES () would not work for list 
         
         return difRange[difficulty-1],guesses[difficulty-1]; # returns value in list depending on input. -1 becaues python starts counting from 0
            
@@ -32,7 +32,7 @@ def main():
 
             print("3.) Hard   (Number Range: 1-1000 ; Guesses: 12) ");
 
-            difficulty = int(input(": ")) #collects user input for difficulty and calls from funbnciton from earlier
+            difficulty = int(input(": ")) #collects user input for difficulty and calls from function from earlier
             difRange,guesses = DifandGuess(difficulty) #runs multiple return function with user input to return coresponding values
             rand=random.randint(0,difRange) #generates random number based on user input between 1 and X 
 
