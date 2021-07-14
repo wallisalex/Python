@@ -2,10 +2,6 @@
 # Written for Python 3.9.6
 #
 
-global x,y #global variables to store data
-x = 5
-y = 0
-
 import random
 
 def main():
@@ -20,7 +16,7 @@ def main():
         difRange=[25,100,1000] #ranges coresponding to difficulty
         guesses=[5,8,12] #guesses coresponding to difficulty HAD TO USE [] BECAUES () would not work
         
-        return difRange[difficulty-1],guesses[difficulty-1]; # returning multiple values and subtracting 1 because python list starts at 0 
+        return difRange[difficulty-1],guesses[difficulty-1]; # returns value in list depending on input. -1 becaues python starts counting from 0
            
     def guessingGame(): #setting up game function
 
@@ -36,32 +32,44 @@ def main():
 
             print("3.) Hard   (Number Range: 1-1000 ; Guesses: 12) ");
 
-            difficulty = int(input(": ")) #collects user input for difficulty and calls from funbncitonearlier
-        
-            print("The secret number has been generated... the game has begun.\n")
-
+            difficulty = int(input(": ")) #collects user input for difficulty and calls from funbnciton from earlier
             difRange,guesses = DifandGuess(difficulty) #runs multiple return function with user input to return coresponding values
-
             rand=random.randint(0,difRange) #generates random number based on user input between 1 and X 
 
+            print("The secret number has been generated... the game has begun.\n")
+                       
             #GUESS LOOP TIME
 
             for i in range(0,guesses): #loops until guesses run out or number is guessed
                 guess = getGuess() #calling the return variable from funciton above 
-
+               
                 if guess == rand:
+                    print()
                     print("You have successfully guessed the secret number. Horray for you.")
                     print("YOU WIN!!!")
                     i = 0 #breaks loop/could have used break?
 
-                else:
+                if guess != rand: #could have used else?
                     if guess > rand:
-                        print("The secret number is lower than " + guess)
-                    else:
-                        print("The secret number is greater than " + guess)
+                        guesses = guesses -1
+                        print("The secret number is lower than " + str(guess))
+                        print()
+                        
+                    if guess < rand:
+                        guesses = guesses -1
+                        print("The secret number is greater than " + str(guess))
+                        print()
 
-                print("You have " + guesses + " left...")
-
+                    if guesses != 0:
+                        print("You have " + str(guesses) + " left...")      #printed "you have zero guesses left" hard coded it out
+                        
+                
+                if guesses == 0: #once the gueses counter tallies down, print that
+                    print("You poor sap.. You didn't get the secret number in the allowed")
+                    print("number of guesses. Better luck next time loser!")
+                    print("YOU LOSE!!!")
+                    print("BTW... The secret number was " + str(rand))
+                    print()                    
 
 
     guessingGame()
