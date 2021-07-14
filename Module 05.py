@@ -11,13 +11,16 @@ import random
 def main():
 
     def getGuess(): #function with return
+
         a = int(input("Take a guess at the secret number:"))
         return a #returns value from function
 
     def DifandGuess(difficulty:int): #function with multiple returns
-            difRange=(25,100,1000) #ranges coresponding to difficulty
-            guesses=(5,8,12) #guesses coresponding to difficulty
-            return difRange(difficulty-1),guesses(difficulty-1) # eturning multiple values and subtracting 1 because python starts counting at 0
+        
+        difRange=[25,100,1000] #ranges coresponding to difficulty
+        guesses=[5,8,12] #guesses coresponding to difficulty HAD TO USE [] BECAUES () would not work
+        
+        return difRange[difficulty-1],guesses[difficulty-1]; # returning multiple values and subtracting 1 because python list starts at 0 
            
     def guessingGame(): #setting up game function
 
@@ -39,10 +42,26 @@ def main():
 
             difRange,guesses = DifandGuess(difficulty) #runs multiple return function with user input to return coresponding values
 
-            rand=random.randint(0,difRange) #generates random number based on user input between 1 and X (didnt set starting value to 0 because we are subtracting one above)
+            rand=random.randint(0,difRange) #generates random number based on user input between 1 and X 
 
             #GUESS LOOP TIME
-            
+
+            for i in range(0,guesses): #loops until guesses run out or number is guessed
+                guess = getGuess() #calling the return variable from funciton above 
+
+                if guess == rand:
+                    print("You have successfully guessed the secret number. Horray for you.")
+                    print("YOU WIN!!!")
+                    i = 0 #breaks loop/could have used break?
+
+                else:
+                    if guess > rand:
+                        print("The secret number is lower than " + guess)
+                    else:
+                        print("The secret number is greater than " + guess)
+
+                print("You have " + guesses + " left...")
+
 
 
     guessingGame()
