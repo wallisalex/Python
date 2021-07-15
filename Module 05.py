@@ -6,7 +6,7 @@ import random
 
 def main():
 
-    def getGuess(): #function with return
+    def getGuess(): #function with single return
 
         a = int(input("Take a guess at the secret number:"))
         return a #returns value from function

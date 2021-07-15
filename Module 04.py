@@ -15,7 +15,7 @@ def Main():
         x = rH #converting user input to temp varibles 
         y = rW
                 
-        print("Displaying a " + str(x) + " by " + str(y) + " rectangle.") #outputing the size and type of shape
+        print("Displaying a " + str(x) + " x " + str(y) + " rectangle.") #outputing the size and type of shape
 
         print("") 
 
@@ -24,7 +24,7 @@ def Main():
         
         print("")
         print("")
-        print("")
+   
                 
     def DrawRtri(tH):
 
@@ -41,7 +41,7 @@ def Main():
             
         print("")
         print("")
-        print("")
+     
 
     def DrawPyra(pB):
         x = pB
@@ -55,8 +55,7 @@ def Main():
                 print("  ", end ="") #prints spaces 
 
             for j in range(2 * i + 1): #doubles user input 
-                print ("* ", end = "") #prints *, end works like \n creating a new print statement every loop
-
+                print ("* ", end = "") #ends the line like \n, but allows you to the end print statement with any character/string
             
 
             print ()
