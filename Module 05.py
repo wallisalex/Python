@@ -16,7 +16,7 @@ def main():
         difRange=[25,100,1000] #ranges coresponding to difficulty https://www.geeksforgeeks.org/g-fact-41-multiple-return-values-in-python/
         guesses=[5,8,12] #guesses coresponding to difficulty HAD TO USE [] BECAUES () would not work for list 
         
-        return difRange[difficulty-1],guesses[difficulty-1]; # returns value in list depending on input. -1 becaues python starts counting from 0
+        return difRange[difficulty-1],guesses[difficulty-1]; # returns value in list depending on input. 
            
     def guessingGame(): #setting up game function
 
