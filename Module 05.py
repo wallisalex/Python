@@ -5,19 +5,8 @@
 import random
 
 def main():
-
-    def getGuess(): #function with single return
-
-        a = int(input("Take a guess at the secret number:"))
-        return a #returns value from function
-
-    def DifandGuess(difficulty:int): #function with multiple returns
-        
-        difRange=[25,100,1000] #ranges coresponding to difficulty https://www.geeksforgeeks.org/g-fact-41-multiple-return-values-in-python/
-        guesses=[5,8,12] #guesses coresponding to difficulty HAD TO USE [] BECAUES () would not work for list 
-        
-        return difRange[difficulty-1],guesses[difficulty-1]; # returns value in list depending on input. 
-           
+   
+         
     def guessingGame(): #setting up game function
 
         #STOP = 1001 #creates loops that repeats unless a user enters valid number
@@ -48,6 +37,7 @@ def main():
                     print("You have successfully guessed the secret number. Horray for you.")
                     print("YOU WIN!!!")
                     i = 0 #breaks loop/could have used break?
+                    break
 
                 if guess != rand: #could have used else?
                     if guess > rand: #checks if the users guess is greather than the number
@@ -69,10 +59,22 @@ def main():
                     print("number of guesses. Better luck next time loser!")
                     print("YOU LOSE!!!")
                     print("BTW... The secret number was " + str(rand))
+                    i = 0
                     print()                    
-
+        #FIX THIS ^^^^
 
     guessingGame()
 
+def getGuess(): #function with single return
+
+    a = int(input("Take a guess at the secret number:"))
+    return a #returns value from function
+
+def DifandGuess(difficulty:int): #function with multiple returns
+        
+    difRange=[25,100,1000] #ranges coresponding to difficulty https://www.geeksforgeeks.org/g-fact-41-multiple-return-values-in-python/
+    guesses=[5,8,12] #guesses coresponding to difficulty HAD TO USE [] BECAUES () would not work for list 
+        
+    return difRange[difficulty-1],guesses[difficulty-1]; # returns value in list depending on input. 
 
 main()
