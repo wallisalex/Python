@@ -97,15 +97,18 @@ def main():
         print()
         
         if centro == 3: 
-            print("VICTORY!    the secret number was: " + str(a) + " " + str(b) + " " + str(c))
+            print("VICTORY!    The secret number was: " + str(a) + " " + str(b) + " " + str(c))
             i = 10
             break
-        
+
+        if i == 9:
+            print("YOU LOSE.  You are out of guesses.  The secret number was: " + str(a) + " " + str(b) + " " + str(c))
+                 
         pica = 0 
         centro = 0
         counter = counter - 1 
 
-        
+       
 
 
 main()
