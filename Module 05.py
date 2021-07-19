@@ -60,7 +60,8 @@ def main():
                     print("YOU LOSE!!!")
                     print("BTW... The secret number was " + str(rand))
                     i = 0
-                    print()                    
+                    print()      
+                                  
         #FIX THIS ^^^^
 
     guessingGame()
