@@ -51,20 +51,20 @@ def main():
 
     for i in range(0,counter): 
         
-        print("Guess #" + str(i + 1))
+        print("Guess #" + str(i + 1)) #prints place in for loops +1 since it starts at 0
         guess1 = int(input("Please enter the first digit in your guess : "))
         guess2 = int(input("Please enter the seccond digit in your guess : "))
         guess3 = int(input("Please enter the third digit in your guess : "))
                     
         # is guess1 a pica or centro?
-
-        if guess1 == a:
+ 
+        if guess1 == a: #
             centro += 1
 
-        elif guess1 == b:
+        elif guess1 == b: #if previous is not true try this 
             pica += 1
 
-        elif guess1 == c:
+        elif guess1 == c:  #then try this
             pica += 1
 
         # is guess2 a pica or centro?
@@ -98,13 +98,13 @@ def main():
         
         if centro == 3: 
             print("VICTORY!    The secret number was: " + str(a) + " " + str(b) + " " + str(c))
-            i = 10
-            break
+            i = 9
+            break #if the user wins the game, break the loop
 
-        if i == 9:
+        if i == 9: #when the for loop ends display this message
             print("YOU LOSE.  You are out of guesses.  The secret number was: " + str(a) + " " + str(b) + " " + str(c))
                  
-        pica = 0 
+        pica = 0  #counter for pica and centro are reset to 0 at the start of each turn to prevent infinite counting
         centro = 0
         counter = counter - 1 
 
