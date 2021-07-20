@@ -2,18 +2,18 @@
 # Written for Python 3.9.6
 # Pico Centro 
 
-a = 0
+a = 0 #variable for secret number
 b = 1 
 c = 2
 
-pica = 0
+pica = 0    #globals for score
 centro = 0 
 
-guess1 = 0
+guess1 = 0  #global for guess nums
 guess2 = 0
 guess3 = 0
 
-counter = 10
+counter = 10 #temp
 
 def Clear(): #clear screen function
     clear = ('\n' * 40)
