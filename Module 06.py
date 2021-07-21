@@ -62,11 +62,11 @@ def DetermineAverageValue(filename):
 
     total = 0
     elementCount = 0
-    temp = inHandle.readline()
+    temp = inHandle.readline() #setting up read file 
     temp = temp.rstrip('\n')
     
 
-    while temp != '':
+    while temp != '': #while that keeps repeating if there is not a space
         elementCount += 1
         total = total + int(temp)
         temp = inHandle.readline()
@@ -74,6 +74,7 @@ def DetermineAverageValue(filename):
     averageValue = total / float(elementCount)
 
     return int(elementCount),float(averageValue)
+    #returns the two values, as an intger and a float
     #print("Avg: " + str(averageValue) +" ele: " + str(elementCount))
 
 # Begin MAIN()
