@@ -50,29 +50,30 @@ def GenerateRandomNumberFile(numberOfElements):
 
 
 def DetermineAverageValue(filename):
-    x = filename
+    x = filename #temp var
 
     # open the file for reading
-    inHandle = open(x, 'r')
+    new = open(x, 'r')
 
     # read the numbers from the file with a while loop
 
     total = 0
     elementCount = 0
-    temp = inHandle.readline() #setting up read file 
+    temp = new.readline() #setting up read file 
     temp = temp.rstrip('\n')
     
 
-    while temp != '': #while that keeps repeating if there is not a space
-        elementCount += 1
+    while temp != '': #while that keeps repeating if there is not a space left in the list 
+        elementCount += 1 #counter to print number of lines
         total = total + int(temp)
-        temp = inHandle.readline()
+        temp = new.readline()
 
-    averageValue = total / float(elementCount)
+    averageValue = total / float(elementCount) #calculates average 
 
     return int(elementCount),float(averageValue)
+
     #returns the two values, as an intger and a float
-    #print("Avg: " + str(averageValue) +" ele: " + str(elementCount))
+    
 
 # Begin MAIN()
 main()
