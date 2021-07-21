@@ -27,17 +27,14 @@ def main():
 
     # display the results
    
+    print ('There were %d elements found in the file.' % (elementCount))
 
-    #print ('There were %d elements found in the file.') % (elementCount)
-    print("There were " + str(elementCount) + " elements found in the file.")
+    #print("There were " + str(elementCount) + " elements found in the file.")
 
-    #print ('The average value of the elements was determined to be %.3f.') % (averageValue)
-    print("The average value of the elements was determined to be " + str(averageValue))
+    print ('The average value of the elements was determined to be %.3f.' % (averageValue))
 
-    #DetermineAverageValue(FILE_NAME)
-
-
-
+    #print("The average value of the elements was determined to be " + str(averageValue))
+   
 def GenerateRandomNumberFile(numberOfElements):
     x = numberOfElements
 
