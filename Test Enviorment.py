@@ -1,27 +1,8 @@
-def main():
+temp = new.readline() #setting up read file 
+    temp = temp.rstrip('\n')
     
-# make a string that contains multiple words
 
-    manyWordString = "This is a string that has many words in it."
-
-    print ("Before Splitting:")
-
-    print (manyWordString)
-
-    print ("")
-
-# split the string into a list of words
-
-    wordList = manyWordString.split()
-
-# iterate through the wordList with an index to
-
-# visualize what the split function did
-
-    print ("After Splitting:")
-
-    for index in range( len(wordList) ):
-
-        print ("wordList[%2d] contains: %s" % (index, wordList[index]))
-
-main()
+    while temp != '': #while that keeps repeating if there is not a space left in the list 
+        elementCount += 1 #counter to print number of lines
+        total = total + int(temp)
+        temp = new.readline()

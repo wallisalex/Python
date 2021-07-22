@@ -22,9 +22,18 @@ def main():
             for index in range(len(TheList) ):
                 if (TheList[index].isalpha()): #checking the list for alphanumeric characters and avoiding numbers
                     TheList[index] = (TheList[index].upper()) #converting strings in list to UPPERCASE letters
-                    TheList.sort()
+                    #listli = [item for item in listli if item.isalpha()] #Return's characters in the string are alphabetic
+                    #listli = [each_string.upper() for each_string in listli] #uses list comprehension to create a new list which coverts all letters to uppercase
+            #listli = [each_string.split() for each_string in listli] 
+            #Attempting to remove duplicates with comprehension
+            
+                    [TheList[index].append(b) for b in TheList[index] if b not in TheList[index]]  #https://www.guru99.com/python-howto-remove-duplicates.html
+
+                    #TheList.sort()
                     
-                    print(TheList[index])
+                    m = TheList.append(TheList)
+                    
+                    print(TheList)
 
                     
                     #myset = set(TheList[index]) # Atempted making a set, couldnt figure it out 

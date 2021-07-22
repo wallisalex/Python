@@ -21,9 +21,9 @@ def main():
             [listli.append(b) for b in listli if b not in listli]  #https://www.guru99.com/python-howto-remove-duplicates.html
 
             
-            m = listl.append(listli)
+            m = listli.append(listli)
         
-    listli.sort()
+    #listli.sort()
     
     for index in range( len(listli) ):
     
