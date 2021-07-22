@@ -11,11 +11,12 @@ def main():
         for line in f:
             strip_lines = line.strip()
             listli = strip_lines.split()
-           # print(listli)
+            #print(listli)
             m = listl.append(listli)
-        #print(listl)
+        print(listl)
+
         
-    for index in range( len(listl) ):
-            print ("wordList[%2d] contains: %s" % (index, listl[index]))
+        
+    
 
 main()
