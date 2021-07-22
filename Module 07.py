@@ -24,7 +24,9 @@ def main():
             m = listl.append(listli)
         
     listli.sort()
-    print(listli)
+    
+    for index in range( len(listli) ):
+            print (listli[index])
         
         
     
