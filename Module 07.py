@@ -17,18 +17,16 @@ def main():
             listli = [each_string.upper() for each_string in listli] #uses list comprehension to create a new list which coverts all letters to uppercase
             #listli = [each_string.split() for each_string in listli] 
             #Attempting to remove duplicates with comprehension
-            
-            [listli.append(b) for b in listli if b not in listli]  #https://www.guru99.com/python-howto-remove-duplicates.html
+            listli.sort()
+            my_finallist = []
+            [my_finallist.append(n) for n in listli if n not in my_finallist]  #https://www.guru99.com/python-howto-remove-duplicates.html
 
             
-            m = listli.append(listli)
+            #m = my_finallist.append(my_finallist)
+       
+    for index in range( len(my_finallist) ):
         
-    #listli.sort()
-    
-    for index in range( len(listli) ):
-    
-        print (listli[index])
-        
+        print (my_finallist[index])
         
     
 
