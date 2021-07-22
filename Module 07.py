@@ -23,13 +23,20 @@ def main():
                 if (TheList[index].isalpha()): #checking the list for alphanumeric characters and avoiding numbers
                     TheList[index] = (TheList[index].upper()) #converting strings in list to UPPERCASE letters
                     TheList.sort()
-                    
+
+                    MyFile=open(TEST_FILE,'w')
+
+                    for element in TheList:
+                        MyFile.write(element + '\n')
+                        
+                    MyFile.close()
+
+
                     
                     #myset = set(TheList[index]) # Atempted making a set, couldnt figure it out 
                     #mynewlist = list(myset)
-             
                     
-        
+                           
                     
                     
                     
