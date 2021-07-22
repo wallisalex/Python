@@ -1,37 +1,29 @@
 
-
 # GLOBALS
-
 FILE_NAME = 'A07S-Genesis.txt'
-TEST_FILE = 'this is test.txt'
+TEST_FILE = 'TEST'
 
 
 def main():
-       
-                        
-   with open(FILE_NAME, "r") as new: # opens the file and names the list my_file then splits each line into singular strings
+    
+    with open(FILE_NAME,'r') as f:
+        listl = [] #creates list to fill with strings
+        for line in f: #for loops strips down the string and breaks it into seperate strings
+            strip_lines = line.strip()
+            listli = strip_lines.split()
+            #print(listli)
+            #https://www.w3schools.com/python/python_lists_comprehension.asp 
+            listli = [item for item in listli if item.isalpha()] #Return's characters in the string are alphabetic
+            listli = [each_string.upper() for each_string in listli] #uses list comprehension to create a new list which coverts all letters to uppercase
 
-        temp = new.readline() #setting up read file 
-        temp = temp.rstrip('\n')
 
+            m = listl.append(listli)
+        
 
-        while temp != '': #while that keeps repeating if there is not a space
-            temp = new.readline() #to make sure the loop goes through the entire list and doesnt print the same line endlessly 
-            TheList = temp.split()
-            
-            for index in range(len(TheList) ):
-                if (TheList[index].isalpha()): #checking the list for alphanumeric characters and avoiding numbers
-                    TheList[index] = (TheList[index].upper()) #converting strings in list to UPPERCASE letters
-                    TheList.sort()
-                    
-                    print(TheList[index])
+    for index in range( len(listl) ):
+        print (listl[index])
+        
+        
+    
 
-                    
-                    #myset = set(TheList[index]) # Atempted making a set, couldnt figure it out 
-                    #mynewlist = list(myset)
-                    
-                           
-                    
-                    
-                    
 main()
