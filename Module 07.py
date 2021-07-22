@@ -26,7 +26,8 @@ def main():
     listli.sort()
     
     for index in range( len(listli) ):
-            print (listli[index])
+    
+        print (listli[index])
         
         
     
