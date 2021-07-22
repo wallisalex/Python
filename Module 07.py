@@ -1,14 +1,15 @@
 
+
 # GLOBALS
 FILE_NAME = 'A07S-Genesis.txt'
-TEST_FILE = 'TEST'
+TEST_FILE = 'OUTPUT.txt'
 
 
 def main():
     
     with open(FILE_NAME,'r') as f:
         listl = [] #creates list to fill with strings
-        for line in f: #for loops strips down the string and breaks it into seperate strings
+        for line in f: #for loops strips down the string and breaks it into seperate strings #!!! PROBLEM HERE??
             strip_lines = line.strip()
             listli = strip_lines.split()
             #print(listli)
@@ -23,11 +24,16 @@ def main():
 
             
             #m = my_finallist.append(my_finallist)
-       
-    for index in range( len(my_finallist) ):
+        f.close()
+
+    #for index in range(len(my_finallist) ):
         
-        print (my_finallist[index])
-        
-    
+       # print (my_finallist[index])
+
+    new = open(TEST_FILE, 'w')    
+    new.write(str(my_finallist))
+
+        # close the file
+    new.close()
 
 main()

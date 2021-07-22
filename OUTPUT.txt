@@ -1,0 +1,1 @@
+['A', 'AND', 'COFFIN', 'EMBALMED', 'HE', 'IN', 'PUT', 'WAS']
