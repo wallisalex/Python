@@ -43,7 +43,7 @@ def main():
 
     outHandle.close() #stops writing to the file
 
-#creating functions to do the hard work for me 
+#creating functions to do the hard work for me rather than over complicating it
 
 def exportWord(inputString):
     
@@ -55,7 +55,7 @@ def exportWord(inputString):
         return str(exportString) #ensures the exportString is actually a string when returning
 
     else:   
-        return "" #return a blank which will not be added
+        return "" #return a blank which will not be added to the final list
 
         
 main()
