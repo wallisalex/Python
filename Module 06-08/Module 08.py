@@ -22,3 +22,9 @@ def main():
 
     # display the board to see if everything worked
     DisplayBoard(gameBoard, 0)
+
+
+
+    print ("test")
+
+main()
