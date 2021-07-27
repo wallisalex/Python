@@ -16,13 +16,14 @@ def main():
        
     # populate the board with dead squares to start
     InitializeBoard(gameBoard)
-        #print(gameBoard)
-
+    
+    
     # populate the board with live coordinates from the data file
     PopulateBoardFromFile(gameBoard, INPUT_FILE)
-
+    
+   
     # display the board to see if everything worked
-    DisplayBoard(gameBoard, 0)
+    #DisplayBoard(gameBoard, 0)
 
 
 
@@ -54,24 +55,29 @@ def PopulateBoardFromFile(board, fileName):
 
     inHandle = open(fileName, "r") #opening the file for read 
     #lineBuffer = inHandle.readline() #reading the first line in the file 
-    
-    #using the idea from Module 06 to read through all the lines of the file
-    
-    for line in inHandle.readlines():
+            
+    for line in inHandle.readlines(): #goes through all the lines and splits them, then assigns them positions in the new 2D array
         cord = (line.split())
         row = (cord[0])
         col = (cord[1])
         tempList = [row,col]
+        print(tempList)
         data.append(tempList)
-            
-    print(data)
-        
+
+    
+    
+                
     
 
-
 def DisplayBoard(board, generationLabel):
-    print()
+    print("+---------------------+")
+    print("| GENERATION # "+ str(generationLabel)+"      |")
+    print("+---------------------+")
 
+    for i in board:
+        for j in i:
+            print(j + " | ", end='')
+        print()
 
 
 

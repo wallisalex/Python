@@ -1,31 +1,56 @@
-
-# GLOBALS
-FILE_NAME = 'A07S-Genesis.txt'
-TEST_FILE = 'TEST'
-
-
 def main():
+     # DELETING THINGS USING SPLICES
+ # create a list that contains all of the integers between -10 and 10
+    myList = range(-10, 11)
     
-    with open(FILE_NAME,'r') as f:
-        listl = [] #creates list to fill with strings
-        for line in f: #for loops strips down the string and breaks it into seperate strings
-            strip_lines = line.strip()
-            listli = strip_lines.split()
-            #print(listli)
-            #https://www.w3schools.com/python/python_lists_comprehension.asp 
-            listli = [item for item in listli if item.isalpha()] #Return's characters in the string are alphabetic
-            listli = [each_string.upper() for each_string in listli] #uses list comprehension to create a new list which coverts all letters to uppercase
-            #listli = [each_string.split() for each_string in listli] 
-            #Attempting to remove duplicates with comprehension
-            listli.sort()
-            [listli.append(b) for b in listli if b not in listli]  #https://www.guru99.com/python-howto-remove-duplicates.html
-          
-                                    
-    for index in range( len(listli) ):
+    # display the list
+    print ("INITIAL LIST:")
+    print (myList)
+    print ("")
     
-        print (listli[index])
-        
-        
+    # use a splice to delete all of the negative elements
+    del myList[0:10]
     
-
+    # display the list
+    print("AFTER DELETING myList[0:10]")
+    print (myList)
+    print ("")
+    
+    # use a splice to delete all of the even elements in the list
+    del myList[0:11:2]
+    
+    # display the list
+    print ("AFTER DELETING myList[0:11:2]")
+    print (myList)
+    print ("")
+    
+    # DELETING THINGS USING THE INDEX METHOD
+    # create a list of random letters between A and C
+    letterList = ['A', 'C', 'B', 'C', 'A', 'C', 'A', 'B', 'B', 'C', 'A']
+    
+    # display the list
+    print ("INITIAL LETTER LIST:")
+    print (letterList)
+    print('')
+    
+    # use the index operator to delete all instances of the letter A
+    targetFound = True
+    while targetFound == True:
+    # assume there are no As left in the array to delete
+        targetFound = False
+    try:
+        deleteIndex = letterList.index('A')
+        targetFound = True
+        del letterList[deleteIndex]
+    
+    except ValueError:
+        print ("The last instance of 'A' was deleted...")
+    
+    # display the list
+    print ("AFTER DELETING 'A's LETTER LIST:")
+    print (letterList)
+    print ()
+    
+    # Begin MAIN()
 main()
+ 
