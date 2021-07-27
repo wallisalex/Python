@@ -70,7 +70,7 @@ def PopulateBoardFromFile(board, fileName):
 def DisplayBoard(board, generationLabel):
     print()
 
-
+print()
 
 
 main()
