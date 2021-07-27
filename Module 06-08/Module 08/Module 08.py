@@ -16,7 +16,7 @@ def main():
        
     # populate the board with dead squares to start
     InitializeBoard(gameBoard)
-    print(gameBoard)
+        #print(gameBoard)
 
     # populate the board with live coordinates from the data file
     PopulateBoardFromFile(gameBoard, INPUT_FILE)
@@ -48,29 +48,31 @@ def InitializeBoard(board): #takes in the 2D list, will create loop to "scan" th
             board[i][j] = MARK_DEAD #the board is now populated with DEAD CELLS
  
 def PopulateBoardFromFile(board, fileName):
-
+    tempList = []
+    data = []
     row,col = [],[]
 
     inHandle = open(fileName, "r") #opening the file for read 
-    lineBuffer = inHandle.readline() #reading the first line in the file 
+    #lineBuffer = inHandle.readline() #reading the first line in the file 
     
     #using the idea from Module 06 to read through all the lines of the file
     
-                  
-    for line in inHandle:
-        x, y = line.split()
-        row.append(x)
-        col.append(y)
-
-    else:
-        print("This data could not parse as a valid coordinate. Please format it properly")
-
+    for line in inHandle.readlines():
+        cord = (line.split())
+        row = (cord[0])
+        col = (cord[1])
+        tempList = [row,col]
+        data.append(tempList)
+            
+    print(data)
+        
+    
 
 
 def DisplayBoard(board, generationLabel):
     print()
 
-print()
+
 
 
 main()
