@@ -11,6 +11,7 @@ MARK_DEAD = "D"
 
 # FUNCTIONS
 def main():
+    print()
     # create a 2d array that represents the board
     gameBoard = Create2DArray(NUM_ROWS, NUM_COLS)
        
@@ -64,15 +65,6 @@ def PopulateBoardFromFile(board, fileName):
         data.append(tempList)
 
     # pop() can throw error if given index is out of range, so use try / except
-    while True:   
-        try:
-            if len(data) > len(board):
-                del data[10]
-            break
-        except IndexError:
-            print("EXCEPTION: The coordinate " + data[10][0])
-            continue
-       
     
     for i in range(len(data)):
         try:
@@ -82,10 +74,12 @@ def PopulateBoardFromFile(board, fileName):
         
         except ValueError:
             print("EXCEPTION: The token '"+ row + "' or ' " + col + " could not be parsed from the data file.")
-                    
+        
+        except IndexError:
+            print("EXCEPTION: The coordinate (" + row +", "+ col + ") cannot be accessed on the board.")
     
     
-                
+    
     
 
 def DisplayBoard(board, generationLabel):
