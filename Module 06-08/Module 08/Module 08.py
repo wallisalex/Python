@@ -49,33 +49,31 @@ def InitializeBoard(board): #takes in the 2D list, will create loop to "scan" th
         for j in range(0, len(board[0])):
             board[i][j] = MARK_DEAD #the board is now populated with DEAD CELLS
  
-def PopulateBoardFromFile(board, fileName):
-    tempList = []
+def PopulateBoardFromFile(board, fileName): 
+    tempList = [] #creating local variables to alter list
     data = []
     row,col = [],[]
     
     inHandle = open(fileName, "r") #opening the file for read 
-    #lineBuffer = inHandle.readline() #reading the first line in the file 
+    
             
     for line in inHandle.readlines(): #goes through all the lines and splits them, then assigns them positions in the new 2D array
-        cord = (line.split())
+        cord = (line.split()) #splits the line into seperate strings, so you can assign the varible to the proper position
         row = (cord[0])
         col = (cord[1])
-        tempList = [row,col]
-        data.append(tempList)
-
-    # pop() can throw error if given index is out of range, so use try / except
-    
-    for i in range(len(data)):
+        tempList = [row,col] #turns temporary 1D list into 2D list 
+        data.append(tempList) #appeneding the list, with the templist as a clone 
+      
+    for i in range(len(data)): #loops through the data as a 2D list, 
         try:
-            row = data[i][0]
+            row = data[i][0] # uses the row and col temp variable again
             col = data[i][1]
-            board[int(row)][int(col)] = MARK_LIVE
+            board[int(row)][int(col)] = MARK_LIVE #uses the two temp variables as indexs and sets the positions to alive 
         
-        except ValueError:
+        except ValueError:  #when the current value at i index is not an int this errow is thrown
             print("EXCEPTION: The token '"+ row + "' or ' " + col + " could not be parsed from the data file.")
         
-        except IndexError:
+        except IndexError: #when the data list legnth is greater than the board length it throws this error
             print("EXCEPTION: The coordinate (" + row +", "+ col + ") cannot be accessed on the board.")
     
     
