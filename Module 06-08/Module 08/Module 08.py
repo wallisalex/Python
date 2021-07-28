@@ -23,7 +23,7 @@ def main():
     
    
     # display the board to see if everything worked
-    #DisplayBoard(gameBoard, 0)
+    DisplayBoard(gameBoard, 0)
 
 
 
@@ -52,7 +52,7 @@ def PopulateBoardFromFile(board, fileName):
     tempList = []
     data = []
     row,col = [],[]
-
+    
     inHandle = open(fileName, "r") #opening the file for read 
     #lineBuffer = inHandle.readline() #reading the first line in the file 
             
@@ -61,9 +61,28 @@ def PopulateBoardFromFile(board, fileName):
         row = (cord[0])
         col = (cord[1])
         tempList = [row,col]
-        print(tempList)
         data.append(tempList)
 
+    # pop() can throw error if given index is out of range, so use try / except
+    while True:   
+        try:
+            if len(data) > len(board):
+                del data[10]
+            break
+        except IndexError:
+            print("EXCEPTION: The coordinate " + data[10][0])
+            continue
+       
+    
+    for i in range(len(data)):
+        try:
+            row = data[i][0]
+            col = data[i][1]
+            board[int(row)][int(col)] = MARK_LIVE
+        
+        except ValueError:
+            print("EXCEPTION: The token '0' or '0a' could not be parsed from the data file.")
+                    
     
     
                 
