@@ -81,14 +81,15 @@ def PopulateBoardFromFile(board, fileName):
     
 
 def DisplayBoard(board, generationLabel):
-    print("+---------------------+")
-    print("| GENERATION # "+ str(generationLabel)+"      |")
-    print("+---------------------+")
-
-    for i in board:
-        for j in i:
-            print(j + " | ", end='')
-        print()
+    print("+----------------------+")
+    print("| GENERATION # "+ str(generationLabel)+"       |") #sets up formating
+    print("+----------------------+")
+ 
+    for i in board: #loops through rows
+        for j in i: #loops through columns
+            print("",j, "|", end='') #every time j loops it prints this
+        print("\n"+"---+---+---+---+---+---+---+---+---+---") #every time i loops it prints this
+        
 
 
 
