@@ -81,7 +81,7 @@ def PopulateBoardFromFile(board, fileName):
             board[int(row)][int(col)] = MARK_LIVE
         
         except ValueError:
-            print("EXCEPTION: The token '0' or '0a' could not be parsed from the data file.")
+            print("EXCEPTION: The token '"+ row + "' or ' " + col + " could not be parsed from the data file.")
                     
     
     
