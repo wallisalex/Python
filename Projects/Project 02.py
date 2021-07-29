@@ -44,8 +44,8 @@ def main():
         print(fileName) #prints the name of the input file
         print("FREQUENCY TOTALS")
         #prints the number frequency for the current dataset 
-        print("FREQ_01 =  " + str(BaseTenCount[0]) + ", " +"FREQ_02 =  " + str(BaseTenCount[1]) +", " + "FREQ_03 =  " + str(BaseTenCount[2]) +", "+"FREQ_04 =  " + str(BaseTenCount[3]))
-        print("FREQ_05 =   " + str(BaseTenCount[4]) + ", " +"FREQ_06 =  " + str(BaseTenCount[5]) +", " + "FREQ_07 =   " + str(BaseTenCount[6]) +", "+"FREQ_08 =  " + str(BaseTenCount[7]))
+        print("FREQ_01 =   " + str(BaseTenCount[0]) + ", " +"FREQ_02 =  " + str(BaseTenCount[1]) +", " + "FREQ_03 =  " + str(BaseTenCount[2]) +", "+"FREQ_04 =  " + str(BaseTenCount[3]))
+        print("FREQ_05 =   " + str(BaseTenCount[4]) + ", " +" FREQ_06 =  " + str(BaseTenCount[5]) +", " + " FREQ_07 =  " + str(BaseTenCount[6]) +", "+" FREQ_08 =  " + str(BaseTenCount[7]))
         print("FREQ_09 =   " + str(BaseTenCount[8]))
         print()
         print("RELATIVE FREQUENCY TOTALS")
@@ -58,7 +58,7 @@ def main():
         print("BENFORD OFFSET VALUES")
         #prints the BENFORD OFFSET VALUES for the current dataset 
         print("BOFF_01 =   " + str(BefordOffset[0]) + ", " +"BOFF_02 =  " + str(BefordOffset[1]) +", " + "BOFF_03 =   " + str(BefordOffset[2]) +", "+"BOFF_04 =  " + str(BefordOffset[3]))
-        print("BOFF_05 =   " + str(BefordOffset[4]) + ", " +"BOFF_06 =  " + str(BefordOffset[5]) +", " + "BOFF_07 =   " + str(BefordOffset[6]) +", "+"BOFF_08 =  " + str(BefordOffset[7]))
+        print("BOFF_05 =   " + str(BefordOffset[4]) + ", " +"  BOFF_06 =  " + str(BefordOffset[5]) +", " + "BOFF_07 =   " + str(BefordOffset[6]) +", "+"BOFF_08 =  " + str(BefordOffset[7]))
         print("BOFF_09 =   " + str(BefordOffset[8]))
         BENSUM = abs(round(BENSUM,3))
         print("The sum of the Benford Offsets is: " + str(BENSUM))
