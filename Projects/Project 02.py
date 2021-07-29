@@ -72,6 +72,7 @@ def main():
        
         print()
     
+    print()
     print("FILE NAME           | Forgery Coeffecient")
     print("--------------------+---------------------")
 
