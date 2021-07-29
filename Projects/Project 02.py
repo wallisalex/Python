@@ -6,19 +6,18 @@ from sys import base_exec_prefix
 
 def main():
 
-    FORGERYCOEFFICIENT = [0,0,0,0,0,0,0,0,0]
+    FORGERYCOEFFICIENT = [0,0,0,0,0,0,0,0,0,0]
+    
+    TEST = 0
 
     def BenfordCalc(fileName): #this function open the files and reads it for values and puts them in a list to be analyzed
         BaseTenCount=[0,0,0,0,0,0,0,0,0] #1,2,3,4,5,6,7,8,9
-        EmpiricalProbability=[0,0,0,0,0,0,0,0,0] #1,2,3,4,5,6,7,8,9
+        EmpiricalProbability=[0,0,0,0,0,0,0,0,0] 
         BenfordProbability=[0.301,0.176,0.124,0.097,0.079,0.076,0.058,0.051,0.046]
-        BefordOffset=[0,0,0,0,0,0,0,0,0] #1,2,3,4,5,6,7,8,9
-        
-        BenSum = 0
+        BefordOffset=[0,0,0,0,0,0,0,0,0] 
         tempCounter = 0
-        
-         
         numberOfEntries = 0
+
         inHandle = open(fileName, "r") #opening the file for read 
                             
         for line in inHandle.readlines(): #goes through all the lines and splits them, then assigns them positions in the new 2D array
@@ -31,18 +30,17 @@ def main():
             BaseTenCount[int(countX)] = tempCounter #
             tempCounter = 0 #resets the temp counter so the loops doesnt break
 
-        for i in range(len(BaseTenCount)):
+        for i in range(len(BaseTenCount)): #loop though the indexs to calculate emp prob for each set of numbers
             EmpiricalProbability[i] = BaseTenCount[i] / numberOfEntries
             EmpiricalProbability[i] = round(EmpiricalProbability[i],3)
 
-        for i in range(len(EmpiricalProbability)):
-            BefordOffset[i] = EmpiricalProbability[i] - BenfordProbability[i]
+        for i in range(len(EmpiricalProbability)): #looping to calculate the benford offset of the numbers
+            BefordOffset[i] = BenfordProbability[i] - EmpiricalProbability[i] 
             BefordOffset[i] = round(BefordOffset[i],3)
         
-        for i in range(len(BefordOffset)):
+        for i in range(len(BefordOffset)): #calculating the total sum of the offsets of that dataset 
             x = BefordOffset[i]
-            BenSum += x
-        
+            BENSUM = x
         
         print(str(numberOfEntries) + " integer elements were encountered and analyzed in: ")
         print(fileName)
@@ -64,19 +62,28 @@ def main():
         print("BOFF_01 =   " + str(BefordOffset[0]) + ", " +"BOFF_02 =  " + str(BefordOffset[1]) +", " + "BOFF_03 =   " + str(BefordOffset[2]) +", "+"BOFF_04 =  " + str(BefordOffset[3]))
         print("BOFF_05 =   " + str(BefordOffset[4]) + ", " +"BOFF_06 =  " + str(BefordOffset[5]) +", " + "BOFF_07 =   " + str(BefordOffset[6]) +", "+"BOFF_08 =  " + str(BefordOffset[7]))
         print("BOFF_09 =   " + str(BefordOffset[8]))
-        BenSum = round(BenSum,3)
-        print("The sum of the Benford Offsets is: " + str(BenSum))
+        BENSUM = round(BENSUM,3)
+        print("The sum of the Benford Offsets is: " + str(BENSUM))
+        
             
         BaseTenCount=[0,0,0,0,0,0,0,0,0,0]   
         BefordOffset=[0,0,0,0,0,0,0,0,0] 
-
+        EmpiricalProbability=[0,0,0,0,0,0,0,0,0]
+        
+        return BENSUM
 
     print()  
     for i in range(10):
-        BenfordCalc("P02_DataFile_" + str(i) + ".dat")
-        print()
-        
+        BENSUM = BenfordCalc("P02_DataFile_" + str(i) + ".dat") #FIGURED OUT RETURN VARIABLES
+        FORGERYCOEFFICIENT[i] = BENSUM
        
+        print()
+    
+    print("FILE NAME           | Forgery Coeffecient")
+    print("--------------------+---------------------")
+
+    for i in range(10):
+        print("P02_DataFile_" + str(i) + ".dat "  +" |  "+ str(FORGERYCOEFFICIENT[i]))   
     
     
     
