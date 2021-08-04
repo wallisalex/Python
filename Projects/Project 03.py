@@ -103,12 +103,13 @@ def DisplayBoard(board, generationLabel):
         print("\n"+"---+---+---+---+---+---+---+---+---+----") #every time i loops it prints this
         
 def GenerationalShift(board):
-    DEAD = 0
-    ALIVE = 0
-    array = []
+    
+
     for x in range(len(board)): #loops through the data as a 2D list,   
         for y in range(len(board)):
             try:
+                DEAD = 0
+                ALIVE = 0
                 if board[x][y] == MARK_DEAD or MARK_LIVE: 
 
                     if board[x - 1][y + 1] == MARK_LIVE: #neighbor 1
@@ -150,8 +151,6 @@ def GenerationalShift(board):
                         ALIVE += 1
                     elif board[x + 1 ][y + 1] == MARK_DEAD:
                         DEAD  += 1 
-
-
 
 
                 if board[x][y] == MARK_DEAD: #RULE 1
