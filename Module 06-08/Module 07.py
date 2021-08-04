@@ -4,7 +4,7 @@
 INPUT_FILE = 'A07S-Genesis.txt'
 OUTPUT_FILE = 'A07S-Genesis-Sorted.txt'
 
-
+#../
 def main():
 
     #creates list to fill with strings found in the file 
