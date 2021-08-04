@@ -103,8 +103,6 @@ def DisplayBoard(board, generationLabel):
         print("\n"+"---+---+---+---+---+---+---+---+---+----") #every time i loops it prints this
         
 def GenerationalShift(board):
-    
-
     for x in range(len(board)): #loops through the data as a 2D list,   
         for y in range(len(board)):
             try:
