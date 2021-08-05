@@ -101,55 +101,77 @@ def DisplayBoard(board, generationLabel):
         for j in i: #loops through columns
             print("",j, "|", end='') #every time j loops it prints this
         print("\n"+"---+---+---+---+---+---+---+---+---+----") #every time i loops it prints this
+    
+    
         
 def GenerationalShift(board):
     for x in range(len(board)): #loops through the data as a 2D list,   
         for y in range(len(board)):
-            try:
-                DEAD = 0
-                ALIVE = 0
+            
+                DEAD = int(0)
+                ALIVE = int(0)
                 if board[x][y] == MARK_DEAD or MARK_LIVE: 
+                    try:
+                        if board[x - 1][y + 1] == MARK_LIVE: #neighbor 1
+                            ALIVE += 1
+                        elif board[x - 1][y + 1] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue   
+                    
+                    try:
+                        if board[x][y + 1] == MARK_LIVE: #neighbor 2
+                            ALIVE += 1
+                        elif board[x][y + 1] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue   
+                    
+                    try:                      
+                        if board[x + 1][y + 1] == MARK_LIVE: #neighbor 3
+                            ALIVE += 1
+                        elif board[x + 1][y + 1] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue   
 
-                    if board[x - 1][y + 1] == MARK_LIVE: #neighbor 1
-                        ALIVE += 1
-                    elif board[x - 1][y + 1] == MARK_DEAD:
-                        DEAD  += 1 
+                    try:                        
+                        if board[x - 1][y] == MARK_LIVE: #neighbor 4
+                            ALIVE += 1
+                        elif board[x - 1][y] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue   
 
-                    if board[x][y + 1] == MARK_LIVE: #neighbor 2
-                        ALIVE += 1
-                    elif board[x][y + 1] == MARK_DEAD:
-                        DEAD  += 1 
-                                        
-                    if board[x + 1][y + 1] == MARK_LIVE: #neighbor 3
-                        ALIVE += 1
-                    elif board[x + 1][y + 1] == MARK_DEAD:
-                        DEAD  += 1 
-                                        
-                    if board[x - 1][y] == MARK_LIVE: #neighbor 4
-                        ALIVE += 1
-                    elif board[x - 1][y] == MARK_DEAD:
-                        DEAD  += 1 
-                                        
-                    if board[x + 1][y] == MARK_LIVE: #neighbor 5
-                        ALIVE += 1
-                    elif board[x + 1][y] == MARK_DEAD:
-                        DEAD  += 1 
-                                        
-                    if board[x - 1][y - 1] == MARK_LIVE: #neighbor 6
-                        ALIVE += 1
-                    elif board[x - 1][y - 1] == MARK_DEAD:
-                        DEAD  += 1 
-                                        
-                    if board[x][y - 1] == MARK_LIVE: #neighbor 7
-                        ALIVE += 1
-                    elif board[x][y - 1] == MARK_DEAD:
-                        DEAD  += 1 
-                                        
-                    if board[x + 1][y + 1] == MARK_LIVE: #neighbor 8
-                        ALIVE += 1
-                    elif board[x + 1 ][y + 1] == MARK_DEAD:
-                        DEAD  += 1 
+                    try:                        
+                        if board[x + 1][y] == MARK_LIVE: #neighbor 5
+                            ALIVE += 1
+                        elif board[x + 1][y] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue   
 
+                    try:                        
+                        if board[x - 1][y - 1] == MARK_LIVE: #neighbor 6
+                            ALIVE += 1
+                        elif board[x - 1][y - 1] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue   
+                    try:    
+                        if board[x][y - 1] == MARK_LIVE: #neighbor 7
+                            ALIVE += 1
+                        elif board[x][y - 1] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue   
+                    try:                           
+                        if board[x + 1][y + 1] == MARK_LIVE: #neighbor 8
+                            ALIVE += 1
+                        elif board[x + 1 ][y + 1] == MARK_DEAD:
+                            DEAD  += 1 
+                    except:
+                        continue 
 
                 if board[x][y] == MARK_DEAD: #RULE 1
                     if DEAD + ALIVE == 3:   
@@ -170,13 +192,7 @@ def GenerationalShift(board):
                 ALIVE = 0
                 DEAD = 0
                    
-            except:            
-                continue
             
-        return board          
-            
-
-   
-    
-    
+        return board      
+     
 main()
