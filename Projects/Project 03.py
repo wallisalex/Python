@@ -1,5 +1,6 @@
 # GLOABALS
 from sys import base_exec_prefix
+import copy
 NUM_ROWS = 10 # number of rows on the board
 
 NUM_COLS = 10 # number of columns on the board
@@ -40,20 +41,20 @@ def main():
 
 		DisplayBoard(board, count)
 
-		GenerationalShift(board)
+		board = GenerationalShift(board)
 
 
 
-def Create2DArray(firstDimensionLength, secondDimensionLength): #this function takes in a value for creating the array 
+def Create2DArray(rows, columns): #this function takes in a value for creating the array 
     #creats the list we plan to return, as a 1D list 
     returnList = []
     
     #this for loops creates the first dimension of indexs based on the firstDimensionLength (global value of 10)
-    for x in range(firstDimensionLength):
+    for x in range(rows):
         returnList.append([]) #returns the appened list with 10 values of 'none'
           
-    for x in range(firstDimensionLength): 
-        for y in range(secondDimensionLength): #creating the second dimension of indexs based on the secondDimensionLength (global value of 10)
+    for x in range(rows): 
+        for y in range(columns): #creating the second dimension of indexs based on the secondDimensionLength (global value of 10)
             returnList[x].append(0) #replaces the [] with 0 as a place holder
     
     # return the generated list
@@ -101,98 +102,87 @@ def DisplayBoard(board, generationLabel):
         for j in i: #loops through columns
             print("",j, "|", end='') #every time j loops it prints this
         print("\n"+"---+---+---+---+---+---+---+---+---+----") #every time i loops it prints this
-    
-    
         
 def GenerationalShift(board):
-    for x in range(len(board)): #loops through the data as a 2D list,   
+    shiftedList = copy.deepcopy(board)
+    for x in range(len(board)): #loops through the data as a 2D list   
         for y in range(len(board)):
-            
-                DEAD = int(0)
                 ALIVE = int(0)
-                if board[x][y] == MARK_DEAD or MARK_LIVE: 
-                    try:
-                        if board[x - 1][y + 1] == MARK_LIVE: #neighbor 1
-                            ALIVE += 1
-                        elif board[x - 1][y + 1] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue   
+             
+                if board[x][y] == MARK_LIVE: 
+
+                    if board[x - 1][y + 1] == MARK_LIVE: #neighbor 1
+                        ALIVE += 1
+
+                    if board[x][y + 1] == MARK_LIVE: #neighbor 2
+                        ALIVE += 1
+                                                        
+                    if board[x + 1][y + 1] == MARK_LIVE: #neighbor 3
+                        ALIVE += 1
+                                                            
+                    if board[x - 1][y] == MARK_LIVE: #neighbor 4
+                        ALIVE += 1
+                                        
+                    if board[x + 1][y] == MARK_LIVE: #neighbor 5
+                        ALIVE += 1
+                                                            
+                    if board[x - 1][y - 1] == MARK_LIVE: #neighbor 6
+                        ALIVE += 1
                     
-                    try:
-                        if board[x][y + 1] == MARK_LIVE: #neighbor 2
-                            ALIVE += 1
-                        elif board[x][y + 1] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue   
-                    
-                    try:                      
-                        if board[x + 1][y + 1] == MARK_LIVE: #neighbor 3
-                            ALIVE += 1
-                        elif board[x + 1][y + 1] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue   
-
-                    try:                        
-                        if board[x - 1][y] == MARK_LIVE: #neighbor 4
-                            ALIVE += 1
-                        elif board[x - 1][y] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue   
-
-                    try:                        
-                        if board[x + 1][y] == MARK_LIVE: #neighbor 5
-                            ALIVE += 1
-                        elif board[x + 1][y] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue   
-
-                    try:                        
-                        if board[x - 1][y - 1] == MARK_LIVE: #neighbor 6
-                            ALIVE += 1
-                        elif board[x - 1][y - 1] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue   
-                    try:    
-                        if board[x][y - 1] == MARK_LIVE: #neighbor 7
-                            ALIVE += 1
-                        elif board[x][y - 1] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue   
-                    try:                           
-                        if board[x + 1][y + 1] == MARK_LIVE: #neighbor 8
-                            ALIVE += 1
-                        elif board[x + 1 ][y + 1] == MARK_DEAD:
-                            DEAD  += 1 
-                    except:
-                        continue 
-
-                if board[x][y] == MARK_DEAD: #RULE 1
-                    if DEAD + ALIVE == 3:   
-                        board[int(x)][int(y)] = MARK_LIVE
-                
-                if board[x][y] == MARK_LIVE: #RULE 2 
-                    if ALIVE == int(2) or int(3):
-                        board[int(x)][int(y)] = MARK_LIVE
-                
-                if board[x][y] == MARK_LIVE: #RULE 3
-                    if ALIVE + DEAD == 1 or 4 or 5 or 6 or 7 or 8:
-                        board[int(x)][int(y)] = MARK_DEAD
-
-                if board[x][y] == MARK_DEAD: #RULE 4
-                    if ALIVE + DEAD == 3:
-                        board[int(x)][int(y)] = MARK_DEAD
-
+                    if board[x][y - 1] == MARK_LIVE: #neighbor 7
+                        ALIVE += 1
+                                                                
+                    if board[x + 1][y + 1] == MARK_LIVE: #neighbor 8
+                        ALIVE += 1
+                        
+                board[x][y] = ALIVE
                 ALIVE = 0
-                DEAD = 0
-                   
-            
-        return board      
+
+    for x in range(len(shiftedList)): #loops through the data as a 2D list   
+        for y in range(len(shiftedList)):             
+
+                if shiftedList[x][y] == MARK_LIVE:
+
+                    if board[x][y] == 1:
+                        shiftedList[x][y] = MARK_DEAD
+                        #print("The cell at (" + str(x) +", " + str(y)+ ") becomes DEAD as a result of Rule #3")
+                        
+                    elif board[x][y] == 4:
+                        shiftedList[x][y] = MARK_DEAD
+                        #print("The cell at (" + str(x) +", " + str(y)+ ") becomes DEAD as a result of Rule #3")
+                        
+                    elif board[x][y] == 5:
+                        shiftedList[x][y] = MARK_DEAD
+                       # print("The cell at (" + str(x) +", " + str(y)+ ") becomes DEAD as a result of Rule #3")
+                        
+                    elif board[x][y] == 6:
+                        shiftedList[x][y] = MARK_DEAD
+                        #print("The cell at (" + str(x) +", " + str(y)+ ") becomes DEAD as a result of Rule #3")
+                        
+                    elif board[x][y] == 7:
+                        shiftedList[x][y] = MARK_DEAD
+                        #print("The cell at (" + str(x) +", " + str(y)+ ") becomes DEAD as a result of Rule #3")
+                        
+                    elif board[x][y] == 8:
+                        shiftedList[x][y] = MARK_DEAD
+                       # print("The cell at (" + str(x) +", " + str(y)+ ") becomes DEAD as a result of Rule #3")
+                    
+
+                if shiftedList[x][y] == MARK_DEAD:
+                    if board[x][y] == 3:
+                        shiftedList[x][y] = MARK_LIVE
+                       
+    
+    return shiftedList    
+
+def TestGenerationalShift(board):
+    #print(board)
+    shiftedList = copy.deepcopy(board)
+    shiftedList[5][5] = "TEST"
+    
+    return shiftedList
+
+
+
      
 main()
